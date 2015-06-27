@@ -40,7 +40,9 @@ public class UnitController : MonoBehaviour {
 		// TODO tbd
 		isDead = true;
 		transform.position = spawnPoint.transform.position;
-		Debug.Log("Player dead");
+		Debug.Log("Player reborn");
+		health = 0;
+		isDead = false;
 	}
 
 	void ProcessHit()
@@ -62,7 +64,7 @@ public class UnitController : MonoBehaviour {
 		if(col.gameObject.tag == "Bomb")
 		{
 			ProcessHit();
-			Destroy(col.gameObject);
+			col.gameObject.SetActive(false);
 		}
 
 	}

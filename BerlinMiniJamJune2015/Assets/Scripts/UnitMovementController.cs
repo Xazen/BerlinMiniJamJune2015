@@ -6,6 +6,7 @@ public class UnitMovementController : MonoBehaviour {
 	public string RotateLeftKey = "A";
 	public string RotateRightKey = "D";
 	public float RotateSpeed = 50.0f;
+	public float ForwardSpeed = 2.0f;
 
 	private KeyCode rotateLeftKeyCode;
 	private KeyCode rotateRightKeyCode;
@@ -47,7 +48,7 @@ public class UnitMovementController : MonoBehaviour {
 	/// </summary>
 	public void MoveForward()
 	{
-		gameObject.transform.Translate (Vector3.forward * Time.deltaTime);
+		gameObject.transform.Translate (Vector3.forward * Time.deltaTime * ForwardSpeed);
 	}
 
 	/// <summary>
