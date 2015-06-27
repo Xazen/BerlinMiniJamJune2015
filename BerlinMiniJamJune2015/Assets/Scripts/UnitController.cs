@@ -11,11 +11,15 @@ public class UnitController : MonoBehaviour {
 
 	[SerializeField]
 	GameObject bomb;
-
-	float currentBombCoolDown = 0.0f;
-
+	
 	[SerializeField]
 	GameObject spawnPoint;
+
+	[SerializeField]
+	int requiredPickupsToWin = 2;
+
+	float currentBombCoolDown = 0.0f;
+	int currentPickups = 0;
 	
 	bool isDead = false;
 	
@@ -83,6 +87,11 @@ public class UnitController : MonoBehaviour {
 		if (col.gameObject.tag == "Pickup") 
 		{
 			Destroy(col.gameObject);
+			currentPickups ++;
+			if (currentPickups == requiredPickupsToWin)
+			{
+				Application.LoadLevel(0);
+			}
 		}
 	}
 }
