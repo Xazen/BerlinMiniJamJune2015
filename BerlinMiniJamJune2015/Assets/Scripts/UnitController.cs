@@ -77,6 +77,7 @@ public class UnitController : MonoBehaviour {
 			Debug.Log("placing");
 			currentBombCoolDown = bombCoolDown;
 			Instantiate(bomb, new Vector3(transform.position.x, transform.position.y * 10, transform.position.z) , Quaternion.identity); 
+			SoundManager.instance.PlayBombDrop();
 		}
 	}
 
@@ -85,14 +86,17 @@ public class UnitController : MonoBehaviour {
 		{
 			ProcessHit();
 			col.gameObject.SetActive(false);
+			SoundManager.instance.PlayBombExplosion();
 		}
 
 		if (col.gameObject.tag == "Pickup") 
 		{
+			SoundManager.instance.PlayTreasurePickupWin();
 			Destroy(col.gameObject);
 			currentPickups ++;
 			if (currentPickups == requiredPickupsToWin)
 			{
+				SoundManager.instance.PlayWinSound();
 				if (redPlayer)
 				{
 					Application.LoadLevel(3);
