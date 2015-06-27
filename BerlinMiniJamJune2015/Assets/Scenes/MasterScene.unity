@@ -292,6 +292,14 @@ Prefab:
       propertyPath: m_Name
       value: SpawnPoint1
       objectReference: {fileID: 0}
+    - target: {fileID: 13605382, guid: a015cd4d43651f845a1d1d4eb4a51dde, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2306752, guid: a015cd4d43651f845a1d1d4eb4a51dde, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11445404, guid: a015cd4d43651f845a1d1d4eb4a51dde, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: a015cd4d43651f845a1d1d4eb4a51dde, type: 2}
@@ -759,7 +767,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3bc791794dbe18846a73933fc2aa81b6, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -1652,7 +1660,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
-  m_Intensity: .200000003
+  m_Intensity: .0500000007
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
@@ -3025,7 +3033,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0c7cb2b514650994ba9d02604cc08f34, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
@@ -4017,8 +4025,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1817398089}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -13, y: 1, z: -8}
-  m_LocalScale: {x: 4, y: 2, z: 2}
+  m_LocalPosition: {x: -13.6099997, y: 1, z: -8}
+  m_LocalScale: {x: 4.8288002, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1776079202}
   m_RootOrder: 1
@@ -4534,6 +4542,14 @@ Prefab:
     - target: {fileID: 176562, guid: a015cd4d43651f845a1d1d4eb4a51dde, type: 2}
       propertyPath: m_Name
       value: SpawnPoint2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2306752, guid: a015cd4d43651f845a1d1d4eb4a51dde, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 13605382, guid: a015cd4d43651f845a1d1d4eb4a51dde, type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11445404, guid: a015cd4d43651f845a1d1d4eb4a51dde, type: 2}
