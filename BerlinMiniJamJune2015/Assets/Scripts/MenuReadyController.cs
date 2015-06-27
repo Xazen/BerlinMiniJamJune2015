@@ -29,12 +29,14 @@ public class MenuReadyController : MonoBehaviour {
 			goPlayerA.GetComponent<Text>().color = Color.green;
 			goPlayerA.GetComponent<Text>().text = "Yeah!";
 			goPlayerA.GetComponent<Text>().transform.Rotate(new Vector3(0,0,180));
+			SoundManager.instance.PlayBombDrop();
 			playerA = true;	
 		}
 		if (Input.GetKeyDown(KeyCode.A) && !playerB){
 			goPlayerB.GetComponent<Text>().color = Color.green;
 			goPlayerB.GetComponent<Text>().text = "Let's go!";
 			goPlayerB.GetComponent<Text>().transform.Rotate(new Vector3(0,0,180));
+			SoundManager.instance.PlayBombDrop();
 			playerB = true;
 		}
 
@@ -42,6 +44,7 @@ public class MenuReadyController : MonoBehaviour {
 			goPlayerC.GetComponent<Text>().color = Color.green;
 			goPlayerC.GetComponent<Text>().text = "What are you waiting for?";
 			goPlayerC.GetComponent<Text>().transform.Rotate(new Vector3(0,0,180));
+			SoundManager.instance.PlayBombDrop();
 			playerC = true;
 		}
 
@@ -49,6 +52,7 @@ public class MenuReadyController : MonoBehaviour {
 			goPlayerD.GetComponent<Text>().color = Color.green;
 			goPlayerD.GetComponent<Text>().text = "Let's roll!";
 			goPlayerD.GetComponent<Text>().transform.Rotate(new Vector3(0,0,180));
+			SoundManager.instance.PlayBombDrop();
 			playerD = true;
 		}
 

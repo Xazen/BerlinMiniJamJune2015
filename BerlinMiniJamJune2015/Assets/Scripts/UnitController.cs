@@ -58,12 +58,24 @@ public class UnitController : MonoBehaviour {
 
 	void ProcessDeath(){
 		// TODO tbd
+		StartCoroutine(DeathDelay());
+
+	}
+
+	
+	IEnumerator DeathDelay() {
+
 		isDead = true;
 		transform.position = spawnPoint.transform.position;
 
+		yield return new WaitForSeconds(2);
+	
+
+		
 		health = 0;
 		isDead = false;
 	}
+
 
 	void ProcessHit()
 	{
