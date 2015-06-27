@@ -66,12 +66,11 @@ public class UnitController : MonoBehaviour {
 	IEnumerator DeathDelay() {
 
 		isDead = true;
+		gameObject.GetComponent<UnitInputController>().ForwardSpeed = 0;
 		transform.position = spawnPoint.transform.position;
-
 		yield return new WaitForSeconds(2);
-	
+		gameObject.GetComponent<UnitInputController>().ForwardSpeed = 5;
 
-		
 		health = 0;
 		isDead = false;
 	}
