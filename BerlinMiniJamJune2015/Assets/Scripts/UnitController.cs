@@ -25,9 +25,13 @@ public class UnitController : MonoBehaviour {
 	int currentPickups = 0;
 	
 	bool isDead = false;
+
+	private PickupSpawner pickupSpawner;
 	
 	void Start()
 	{
+		pickupSpawner = (PickupSpawner) GameObject.FindGameObjectWithTag ("PickupSpawner").GetComponent<PickupSpawner>();
+
 		transform.position = spawnPoint.transform.position;
 		if (!redPlayer) 
 		{
@@ -94,7 +98,14 @@ public class UnitController : MonoBehaviour {
 		if (col.gameObject.tag == "Pickup") 
 		{
 			Destroy(col.gameObject);
+			pickupSpawner.SpawnItem();
 			currentPickups ++;
+
+			if (currentPickups <= requiredPickupsToWin)
+			{
+				transform.FindChild("Score" + currentPickups).GetComponent<Renderer>().material.color = Color.gray;
+			}
+
 			if (currentPickups == requiredPickupsToWin)
 			{
 				if (redPlayer)
