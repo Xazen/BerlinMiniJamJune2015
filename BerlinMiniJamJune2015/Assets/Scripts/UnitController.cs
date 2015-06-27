@@ -101,13 +101,14 @@ public class UnitController : MonoBehaviour {
 			pickupSpawner.SpawnItem();
 			currentPickups ++;
 
-			if (currentPickups <= requiredPickupsToWin)
+			if (currentPickups <= requiredPickupsToWin && transform.FindChild("Score" + currentPickups) != null)
 			{
 				transform.FindChild("Score" + currentPickups).GetComponent<Renderer>().material.color = Color.gray;
 			}
 
 			if (currentPickups == requiredPickupsToWin)
 			{
+				Time.timeScale = 0;
 				if (redPlayer)
 				{
 					Application.LoadLevel(3);
@@ -116,7 +117,21 @@ public class UnitController : MonoBehaviour {
 				{
 					Application.LoadLevel(2);
 				}
+				StartCoroutine(ShowGameOver());
 			}
+		}
+	}
+
+	IEnumerator ShowGameOver()
+	{
+		yield return new WaitForSeconds (1.0f);
+		if (redPlayer)
+		{
+			Application.LoadLevel(3);
+		} 
+		else 
+		{
+			Application.LoadLevel(2);
 		}
 	}
 }
