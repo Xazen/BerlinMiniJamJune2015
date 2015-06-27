@@ -73,7 +73,7 @@ public class UnitController : MonoBehaviour {
 		{
 			Debug.Log("placing");
 			currentBombCoolDown = bombCoolDown;
-			Instantiate(bomb, new Vector3(transform.position.x, transform.position.y * 5, transform.position.z) , Quaternion.identity); 
+			Instantiate(bomb, new Vector3(transform.position.x, transform.position.y * 10, transform.position.z) , Quaternion.identity); 
 		}
 	}
 
