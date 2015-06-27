@@ -29,6 +29,10 @@ public class UnitController : MonoBehaviour {
 	void Start()
 	{
 		transform.position = spawnPoint.transform.position;
+		if (!redPlayer) 
+		{
+			gameObject.transform.localEulerAngles = new Vector3(0, 0, 0);
+		}
 	}
 
 	void Update () {
