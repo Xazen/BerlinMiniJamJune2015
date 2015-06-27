@@ -9,3 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menu.unity
   - enabled: 1
     path: Assets/Scenes/MasterScene.unity
+  - enabled: 1
+    path: Assets/Scenes/WinBlue.unity
+  - enabled: 1
+    path: Assets/Scenes/WinRed.unity

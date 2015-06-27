@@ -40,7 +40,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberOfPickups: 3
-  spawnOffset: 3
+  spawnOffset: 5
   pickup: {fileID: 122464, guid: 97a4ce97cec99ae40bfe72b37429522a, type: 2}
 --- !u!1001 &100100000
 Prefab:
