@@ -166,7 +166,7 @@ Material:
       data:
         first:
           name: _InvFade
-        second: 1.12
+        second: 1.46000004
       data:
         first:
           name: _Cull
