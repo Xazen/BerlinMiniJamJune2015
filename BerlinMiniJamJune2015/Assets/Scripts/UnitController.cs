@@ -45,10 +45,11 @@ public class UnitController : MonoBehaviour {
 
 	void ProcessHit()
 	{
-		// TODO tbd particle
+		GameObject.Find("BigBang").GetComponent<ParticleSystem>().Play();
 		// TODO tbd sounds
 
 		health --;
+
 		Debug.Log("Unit Hit");
 	}
 
