@@ -19,6 +19,9 @@ public class UnitController : MonoBehaviour {
 	GameObject spawnPoint;
 
 	[SerializeField]
+	private GameObject particleBang;
+
+	[SerializeField]
 	int requiredPickupsToWin = 2;
 
 	float currentBombCoolDown = 0.0f;
@@ -36,7 +39,6 @@ public class UnitController : MonoBehaviour {
 	}
 
 	void Update () {
-
 		currentBombCoolDown -= Time.deltaTime;
 
 		ProcessHealth();
@@ -56,31 +58,38 @@ public class UnitController : MonoBehaviour {
 
 	void ProcessDeath(){
 		// TODO tbd
+		StartCoroutine(DeathDelay());
+
+	}
+
+	
+	IEnumerator DeathDelay() {
+
 		isDead = true;
+		gameObject.GetComponent<UnitInputController>().ForwardSpeed = 0;
 		transform.position = spawnPoint.transform.position;
-		Debug.Log("Player reborn");
+		yield return new WaitForSeconds(2);
+		gameObject.GetComponent<UnitInputController>().ForwardSpeed = 5;
+
 		health = 0;
 		isDead = false;
 	}
 
+
 	void ProcessHit()
 	{
-		GameObject.Find("BigBang").GetComponent<ParticleSystem>().Play();
-		// TODO tbd sounds
-
+		Instantiate(particleBang, new Vector3(transform.position.x, transform.position.y, transform.position.z) , Quaternion.identity); 
+//		particleBang.GetComponent<ParticleSystem>().Play();
 		health --;
-
-		Debug.Log("Unit Hit");
 	}
 
 	public void ProcessDropBombTrapBooooya()
 	{
-		Debug.Log("processdro");
 		if (currentBombCoolDown <= 0) 
 		{
-			Debug.Log("placing");
 			currentBombCoolDown = bombCoolDown;
 			Instantiate(bomb, new Vector3(transform.position.x, transform.position.y * 10, transform.position.z) , Quaternion.identity); 
+			SoundManager.instance.PlayBombDrop();
 		}
 	}
 
@@ -89,14 +98,17 @@ public class UnitController : MonoBehaviour {
 		{
 			ProcessHit();
 			col.gameObject.SetActive(false);
+			SoundManager.instance.PlayBombExplosion();
 		}
 
 		if (col.gameObject.tag == "Pickup") 
 		{
+			SoundManager.instance.PlayTreasurePickupWin();
 			Destroy(col.gameObject);
 			currentPickups ++;
 			if (currentPickups == requiredPickupsToWin)
 			{
+				SoundManager.instance.PlayWinSound();
 				if (redPlayer)
 				{
 					Application.LoadLevel(3);
