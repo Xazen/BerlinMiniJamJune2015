@@ -4,6 +4,9 @@ using System.Collections;
 public class UnitController : MonoBehaviour {
 
 	[SerializeField]
+	bool redPlayer;
+
+	[SerializeField]
 	int health = 0;
 	
 	[SerializeField]
@@ -90,7 +93,14 @@ public class UnitController : MonoBehaviour {
 			currentPickups ++;
 			if (currentPickups == requiredPickupsToWin)
 			{
-				Application.LoadLevel(0);
+				if (redPlayer)
+				{
+					Application.LoadLevel(3);
+				} 
+				else 
+				{
+					Application.LoadLevel(2);
+				}
 			}
 		}
 	}
