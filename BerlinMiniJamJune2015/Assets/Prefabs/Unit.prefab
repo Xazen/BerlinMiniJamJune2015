@@ -164,7 +164,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  bomb: {fileID: 0}
+  bomb: {fileID: 171966, guid: 3aa5a7ba4ef7041e08e139f73515ab94, type: 2}
   spawnPoint: {fileID: 0}
 --- !u!114 &11482544
 MonoBehaviour:
@@ -187,7 +187,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: bomb
+      value: 
+      objectReference: {fileID: 171966, guid: 3aa5a7ba4ef7041e08e139f73515ab94, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 150020}

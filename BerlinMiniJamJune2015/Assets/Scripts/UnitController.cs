@@ -5,22 +5,29 @@ public class UnitController : MonoBehaviour {
 
 	[SerializeField]
 	int health = 0;
+	
+	[SerializeField]
+	float bombCoolDown = 1.0f; 
 
 	[SerializeField]
 	GameObject bomb;
 
+	float currentBombCoolDown = 0.0f;
+
 	[SerializeField]
 	GameObject spawnPoint;
-
+	
 	bool isDead = false;
-
-
+	
 	void Start()
 	{
 		transform.position = spawnPoint.transform.position;
 	}
 
 	void Update () {
+
+		currentBombCoolDown -= Time.deltaTime;
+
 		ProcessHealth();
 
 		if (Input.GetKeyDown("space")){
@@ -57,7 +64,13 @@ public class UnitController : MonoBehaviour {
 
 	public void ProcessDropBombTrapBooooya()
 	{
-		Instantiate(bomb, new Vector3(transform.position.x, transform.position.y * 5, transform.position.z) , Quaternion.identity); 
+		Debug.Log("processdro");
+		if (currentBombCoolDown <= 0) 
+		{
+			Debug.Log("placing");
+			currentBombCoolDown = bombCoolDown;
+			Instantiate(bomb, new Vector3(transform.position.x, transform.position.y * 5, transform.position.z) , Quaternion.identity); 
+		}
 	}
 
 	void OnCollisionEnter(Collision col){
