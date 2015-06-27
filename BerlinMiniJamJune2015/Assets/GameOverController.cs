@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class UnitSpawnController : MonoBehaviour {
-
-	[SerializeField]
-	GameObject unit;
+public class GameOverController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
+	
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+		if (Input.anyKeyDown){
+			Application.LoadLevel("Menu");
+		}
+
 	}
 }
