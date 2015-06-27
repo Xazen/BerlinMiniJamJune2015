@@ -725,10 +725,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c335c133e31f475a9b48d929deda3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redPlayer: 0
   health: 0
   bombCoolDown: 1
   bomb: {fileID: 171966, guid: 3aa5a7ba4ef7041e08e139f73515ab94, type: 2}
   spawnPoint: {fileID: 1707569315}
+  requiredPickupsToWin: 2
 --- !u!54 &362204311
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1859,6 +1861,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &783178352
 Transform:
   m_ObjectHideFlags: 0
@@ -2946,10 +2949,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6c335c133e31f475a9b48d929deda3f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  redPlayer: 1
   health: 0
   bombCoolDown: 1
   bomb: {fileID: 171966, guid: 3aa5a7ba4ef7041e08e139f73515ab94, type: 2}
   spawnPoint: {fileID: 931652497}
+  requiredPickupsToWin: 2
 --- !u!54 &1307868470
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4487,6 +4492,10 @@ Prefab:
     - target: {fileID: 11462866, guid: 26d982308de9f8c49b94580a53131ea4, type: 2}
       propertyPath: spawnOffset
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 106106, guid: 26d982308de9f8c49b94580a53131ea4, type: 2}
+      propertyPath: m_Name
+      value: GameManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 26d982308de9f8c49b94580a53131ea4, type: 2}
