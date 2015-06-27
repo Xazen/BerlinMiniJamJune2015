@@ -81,7 +81,7 @@ public class UnitInputController : MonoBehaviour {
 
 	public void PlaceBomb()
 	{
-		Debug.Log("placebomg");
+//		Debug.Log("placebomg");
 		unitController.ProcessDropBombTrapBooooya ();
 	}
 }
