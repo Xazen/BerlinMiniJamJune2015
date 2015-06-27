@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: e781e4e0c6d8c4bb4ab3b45c5b352665
-timeCreated: 1435409388
+timeCreated: 1435415406
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -60,8 +60,8 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GJMine_1
       rect:
@@ -70,8 +70,8 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GJMine_2
       rect:
@@ -80,8 +80,8 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: GJMine_3
       rect:
@@ -90,8 +90,8 @@ TextureImporter:
         y: 0
         width: 64
         height: 64
-      alignment: 1
-      pivot: {x: 0, y: 0}
+      alignment: 0
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

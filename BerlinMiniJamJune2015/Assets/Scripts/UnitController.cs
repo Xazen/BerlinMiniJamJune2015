@@ -80,5 +80,9 @@ public class UnitController : MonoBehaviour {
 			col.gameObject.SetActive(false);
 		}
 
+		if (col.gameObject.tag == "Pickup") 
+		{
+			Destroy(col.gameObject);
+		}
 	}
 }
