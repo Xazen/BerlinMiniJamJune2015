@@ -61,6 +61,7 @@ public class UnitController : MonoBehaviour {
 		if(col.gameObject.tag == "Bomb")
 		{
 			ProcessHit();
+			Destroy(col.gameObject);
 		}
 
 	}
