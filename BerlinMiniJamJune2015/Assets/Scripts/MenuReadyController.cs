@@ -2,6 +2,10 @@
 using System.Collections;
 using UnityEngine.UI;
 
+/// <summary>
+/// Menu ready controller. 
+/// Pathetic code from Viktor.
+/// </summary>
 public class MenuReadyController : MonoBehaviour {
 
 	bool playerA = false;
@@ -21,7 +25,7 @@ public class MenuReadyController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		if (Input.GetKeyDown(KeyCode.W) && !playerA){
+		if (Input.GetKeyDown(KeyCode.D) && !playerA){
 			goPlayerA.GetComponent<Text>().color = Color.green;
 			goPlayerA.GetComponent<Text>().text = "Yeah!";
 			goPlayerA.GetComponent<Text>().transform.Rotate(new Vector3(0,0,180));
@@ -34,14 +38,14 @@ public class MenuReadyController : MonoBehaviour {
 			playerB = true;
 		}
 
-		if (Input.GetKeyDown(KeyCode.S) && !playerC){
+		if (Input.GetKeyDown(KeyCode.W) && !playerC){
 			goPlayerC.GetComponent<Text>().color = Color.green;
 			goPlayerC.GetComponent<Text>().text = "What are you waiting for?";
 			goPlayerC.GetComponent<Text>().transform.Rotate(new Vector3(0,0,180));
 			playerC = true;
 		}
 
-		if (Input.GetKeyDown(KeyCode.D) && !playerD){
+		if (Input.GetKeyDown(KeyCode.S) && !playerD){
 			goPlayerD.GetComponent<Text>().color = Color.green;
 			goPlayerD.GetComponent<Text>().text = "Let's roll!";
 			goPlayerD.GetComponent<Text>().transform.Rotate(new Vector3(0,0,180));
