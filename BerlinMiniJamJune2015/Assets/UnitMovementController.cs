@@ -27,22 +27,40 @@ public class UnitMovementController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{
+		MoveForward ();
+
+		// Rotate left
 		if (Input.GetKey(rotateLeftKeyCode) && rotateLeft != null) 
 		{
 			rotateLeft();
 		}
 
+		// Rotate right
 		if (Input.GetKey(rotateRightKeyCode) && rotateRight != null) 
 		{
 			rotateRight();
 		}
 	}
 
+	/// <summary>
+	/// Moves forward.
+	/// </summary>
+	public void MoveForward()
+	{
+		gameObject.transform.Translate (Vector3.forward * Time.deltaTime);
+	}
+
+	/// <summary>
+	/// Rotates the left.
+	/// </summary>
 	public void RotateLeft()
 	{
 		gameObject.transform.Rotate (0, -RotateSpeed * Time.deltaTime, 0);
 	}
 
+	/// <summary>
+	/// Rotates the right.
+	/// </summary>
 	public void RotateRight()
 	{
 		gameObject.transform.Rotate (0, RotateSpeed * Time.deltaTime, 0);
