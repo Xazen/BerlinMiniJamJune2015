@@ -9,11 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 438894}
   - 33: {fileID: 3327882}
-  - 65: {fileID: 6545454}
   - 23: {fileID: 2344228}
   - 54: {fileID: 5438208}
   - 114: {fileID: 11418028}
   - 114: {fileID: 11482544}
+  - 135: {fileID: 13501994}
   m_Layer: 0
   m_Name: Unit
   m_TagString: Player
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 150020}
   m_LocalRotation: {x: 0, y: .999955595, z: 0, w: -.0094322376}
-  m_LocalPosition: {x: .680000007, y: .75999999, z: 16.8099995}
+  m_LocalPosition: {x: -20.2700005, y: .75999999, z: 16.8099995}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 408560}
@@ -85,8 +85,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 186382}
-  m_LocalRotation: {x: .0284467414, y: .470872134, z: -.881735325, w: .00361505197}
-  m_LocalPosition: {x: 0, y: 6.30999994, z: .600000024}
+  m_LocalRotation: {x: .0288076364, y: .213381335, z: -.976521373, w: .00668868655}
+  m_LocalPosition: {x: 2.14204192e-08, y: 1.19000006, z: .600000501}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 438894}
@@ -137,18 +137,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 0
---- !u!65 &6545454
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 150020}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!108 &10824548
 Light:
   m_ObjectHideFlags: 1
@@ -243,6 +231,18 @@ MonoBehaviour:
   RotateRightKey: L
   RotateSpeed: 100
   ForwardSpeed: 5
+--- !u!135 &13501994
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 150020}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: .544462979
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
