@@ -40,7 +40,9 @@ public class UnitController : MonoBehaviour {
 		// TODO tbd
 		isDead = true;
 		transform.position = spawnPoint.transform.position;
-		Debug.Log("Player dead");
+		Debug.Log("Player reborn");
+		health = 0;
+		isDead = false;
 	}
 
 	void ProcessHit()
@@ -53,16 +55,16 @@ public class UnitController : MonoBehaviour {
 		Debug.Log("Unit Hit");
 	}
 
-	void ProcessDropBombTrapBooooya()
+	public void ProcessDropBombTrapBooooya()
 	{
-		Instantiate(bomb, new Vector3(transform.position.x, transform.position.y * 4, transform.position.z) , Quaternion.identity); 
+		Instantiate(bomb, new Vector3(transform.position.x, transform.position.y * 5, transform.position.z) , Quaternion.identity); 
 	}
 
 	void OnCollisionEnter(Collision col){
 		if(col.gameObject.tag == "Bomb")
 		{
 			ProcessHit();
-			Destroy(col.gameObject);
+			col.gameObject.SetActive(false);
 		}
 
 	}
